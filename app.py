@@ -531,23 +531,24 @@ with tabs[0]:
             p_len = 1.4
             p_wid = 0.2
         
+        # Callback to set sample values
+        def set_sample_values(sl, sw, pl, pw):
+            st.session_state.s_len = sl
+            st.session_state.s_wid = sw
+            st.session_state.p_len = pl
+            st.session_state.p_wid = pw
+
         st.markdown("### 🎲 Quick Samples")
         col_a, col_b, col_c = st.columns(3)
         
         with col_a:
-            if st.button('🌸 Setosa', use_container_width=True):
-                s_len, s_wid, p_len, p_wid = 5.0, 3.6, 1.4, 0.2
-                st.rerun()
+            st.button('� Setosa', on_click=set_sample_values, args=(5.0, 3.6, 1.4, 0.2), use_container_width=True)
         
         with col_b:
-            if st.button('🌼 Versicolor', use_container_width=True):
-                s_len, s_wid, p_len, p_wid = 6.0, 2.7, 4.2, 1.3
-                st.rerun()
+            st.button('🌼 Versicolor', on_click=set_sample_values, args=(6.0, 2.7, 4.2, 1.3), use_container_width=True)
         
         with col_c:
-            if st.button('🌺 Virginica', use_container_width=True):
-                s_len, s_wid, p_len, p_wid = 6.5, 3.0, 5.5, 2.0
-                st.rerun()
+            st.button('🌺 Virginica', on_click=set_sample_values, args=(6.5, 3.0, 5.5, 2.0), use_container_width=True)
     
     with col2:
         st.markdown("### 🔮 Prediction Results")

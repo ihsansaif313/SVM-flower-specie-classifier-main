@@ -22,7 +22,7 @@ st.set_page_config(
     page_title="Iris SVM Classifier — Professional ML Studio",
     layout="wide",
     page_icon="🌸",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Custom CSS for Modern, Professional Design
